@@ -15,8 +15,18 @@ const NewEmployee = () => {
   return (
     <>
       {formIsVisible && <NEForm />}
-      <Button variant="outlined" onClick={onClickHandler}>
-        New Employee
+      <Button
+        variant="contained"
+        onClick={onClickHandler}
+        sx={{
+          borderTopLeftRadius: "50px",
+          borderBottomLeftRadius: "50px",
+          borderTopRightRadius: "50px",
+          borderBottomRightRadius: "50px",
+          height: "100%",
+        }}
+      >
+        New User+
       </Button>
     </>
   );
