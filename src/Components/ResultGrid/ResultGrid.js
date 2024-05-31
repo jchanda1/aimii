@@ -13,8 +13,8 @@ const ResultGrid = () => {
     searchTerm?.length > 2
       ? userData.filter((user) => {
           return (
-            user.FirstName.toUpperCase().includes(searchTerm.toUpperCase()) ||
-            user.LastName.toUpperCase().includes(searchTerm.toUpperCase())
+            user.firstName.toUpperCase().includes(searchTerm.toUpperCase()) ||
+            user.lastName.toUpperCase().includes(searchTerm.toUpperCase())
           );
         })
       : [];
@@ -28,7 +28,7 @@ const ResultGrid = () => {
                 <Card variant="outlined">
                   <CardContent>
                     <Typography variant="h5" component="div">
-                      {`${result.FirstName} ${result.LastName}`}
+                      {`${result.firstName} ${result.lastName}`}
                     </Typography>
                   </CardContent>
                 </Card>
