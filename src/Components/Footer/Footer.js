@@ -1,7 +1,7 @@
 import { AppBar, Grid } from "@mui/material";
 import MyButton from "../MyButton/MyButton";
 import NewEmployee from "../NewEmployeeForm/NewEmployee";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { newEmployeeActions } from "../../store/newEmployeeSlice";
 
 const Footer = () => {
@@ -10,6 +10,8 @@ const Footer = () => {
   const onClickHandler = (e) => {
     dispatch(newEmployeeActions.toggleIsVisible());
   };
+
+  const formIsVisible = useSelector((state) => state.newEmployee.isVisible);
 
   return (
     <AppBar
@@ -21,7 +23,7 @@ const Footer = () => {
       <Grid container spacing={1}>
         <Grid item xs={3} />
         <Grid item xs={6}>
-          <NewEmployee />
+          {formIsVisible && <NewEmployee />}
         </Grid>
         <Grid item xs={3} />
         <Grid item xs={5} />

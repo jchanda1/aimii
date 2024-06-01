@@ -1,6 +1,5 @@
 import { useSelector } from "react-redux";
 import { SearchBar } from "../SearchBar/SearchBar";
-import NewEmployee from "../NewEmployeeForm/NewEmployee";
 import { Container, Grid } from "@mui/material";
 import ResultGrid from "../ResultGrid/ResultGrid";
 import React from "react";
