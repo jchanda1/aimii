@@ -1,5 +1,4 @@
 import * as React from "react";
-import Box from "@mui/material/Box";
 import { Card, Grid } from "@mui/material";
 import CardContent from "@mui/material/CardContent";
 import Typography from "@mui/material/Typography";
@@ -33,14 +32,26 @@ const ResultGrid = () => {
                   border: "1px solid white",
                 }}
               >
-                <CardContent sx={{ paddingLeft: 12, paddingRight: 12 }}>
-                  <Typography variant="h5" component="div">
+                <CardContent
+                  sx={{
+                    p: 0,
+                    pl: 12,
+                    pr: 12,
+                    "&:last-child": {
+                      paddingBottom: 0,
+                    },
+                  }}
+                >
+                  <Typography variant="h5" component="div" sx={{ mb: 1 }}>
                     {`${result.firstName} ${result.lastName}`}
                   </Typography>
-                  <Typography variant="body1">{result.jobTitle}</Typography>
-                  <Typography variant="body2">
+                  <Typography variant="body1" sx={{ mb: 1 }}>
+                    {result.jobTitle}
+                  </Typography>
+                  <Typography variant="body2" sx={{ mb: 1 }}>
                     {result.email}
-                    <br />
+                  </Typography>
+                  <Typography variant="body2" sx={{ mb: 0 }}>
                     {result.phone}
                   </Typography>
                 </CardContent>

@@ -13,7 +13,7 @@ const HomePage = () => {
   return (
     <>
       {showAlert && <FormSubmitSuccess />}
-      <Container fixed sx={{ border: 1 }}>
+      <Container fixed>
         <Grid container spacing={1}>
           <Grid item xs={2} />
           <Grid item xs={8}>
