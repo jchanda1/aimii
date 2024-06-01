@@ -31,14 +31,13 @@ const ResultGrid = () => {
                   minWidth: 275,
                   borderRadius: "25px",
                   border: "1px solid white",
-                  textAlign: "center",
                 }}
               >
-                <CardContent>
+                <CardContent sx={{ paddingLeft: 12, paddingRight: 12 }}>
                   <Typography variant="h5" component="div">
                     {`${result.firstName} ${result.lastName}`}
                   </Typography>
-                  <Typography sx={{ mb: 1.5 }}>{result.jobTitle}</Typography>
+                  <Typography variant="body1">{result.jobTitle}</Typography>
                   <Typography variant="body2">
                     {result.email}
                     <br />
