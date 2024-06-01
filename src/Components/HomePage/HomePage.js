@@ -21,14 +21,14 @@ const HomePage = () => {
             <SearchBar />
           </Grid>
           <Grid item xs={2} />
+          <Grid item xs={12}>
+            <ResultGrid />
+          </Grid>
           <Grid item xs={2} />
           <Grid item xs={8}>
             <NewEmployee />
           </Grid>
           <Grid item xs={2} />
-          <Grid item xs={12}>
-            <ResultGrid />
-          </Grid>
           <Grid item xs={12}>
             <Footer />
           </Grid>

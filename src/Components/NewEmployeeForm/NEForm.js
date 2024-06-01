@@ -1,4 +1,4 @@
-import { Box, TextField } from "@mui/material";
+import { Box, Grid, TextField } from "@mui/material";
 import { useSelector } from "react-redux";
 import { useDispatch } from "react-redux";
 import { newEmployeeActions } from "../../store/newEmployeeSlice";
@@ -55,56 +55,154 @@ const NEForm = () => {
 
   return (
     <Box
-      width={800}
-      sx={{ border: "2px solid grey" }}
-      alignItems="center"
-      display="flex"
+      component="form"
+      autoComplete="off"
+      noValidate
+      onSubmit={submitHandler}
+      sx={{ bgcolor: "white", p: 5, pb: 2, borderRadius: "50px" }}
     >
-      <form autoComplete="off" noValidate onSubmit={submitHandler}>
-        <Box
-          sx={{ border: "2px solid blue" }}
-          alignItems="center"
-          display="flex"
-        >
+      <Grid container spacing={2}>
+        <Grid item xs={6}>
           <TextField
             label="First Name"
             variant="outlined"
             required
             onChange={firstNameChangeHandler}
+            fullWidth
+            InputProps={{
+              style: {
+                borderRadius: "50px",
+                color: "black",
+                border: "pink",
+              },
+            }}
+            sx={{
+              "& .MuiOutlinedInput-root": {
+                "& fieldset": {
+                  borderColor: "secondary.main",
+                  borderWidth: "2px",
+                },
+              },
+              "& .MuiFormLabel-root": {
+                color: "primary.main",
+              },
+            }}
           />
+        </Grid>
+        <Grid item xs={6}>
           <TextField
             label="Last Name"
             variant="outlined"
             required
             onChange={lastNameChangeHandler}
+            fullWidth
+            InputProps={{
+              style: {
+                borderRadius: "50px",
+                backgroundColor: "white",
+                color: "black",
+              },
+            }}
+            sx={{
+              "& .MuiOutlinedInput-root": {
+                "& fieldset": {
+                  borderColor: "secondary.main",
+                  borderWidth: "2px",
+                },
+              },
+              "& .MuiFormLabel-root": {
+                color: "primary.main",
+              },
+            }}
           />
-        </Box>
-        <Box
-          sx={{ border: "2px solid red" }}
-          alignItems="center"
-          display="flex"
-        >
+        </Grid>
+        <Grid item xs={4}>
           <TextField
             onChange={jobTitleChangeHandler}
             label="Job Title"
             variant="outlined"
             required
+            fullWidth
+            InputProps={{
+              style: {
+                borderRadius: "50px",
+                backgroundColor: "white",
+                color: "black",
+              },
+            }}
+            sx={{
+              "& .MuiOutlinedInput-root": {
+                "& fieldset": {
+                  borderColor: "secondary.main",
+                  borderWidth: "2px",
+                },
+              },
+              "& .MuiFormLabel-root": {
+                color: "primary.main",
+              },
+            }}
           />
+        </Grid>
+        <Grid item xs={4}>
           <TextField
             onChange={phoneChangeHandler}
             label="Phone"
             variant="outlined"
             required
+            fullWidth
+            InputProps={{
+              style: {
+                borderRadius: "50px",
+                backgroundColor: "white",
+                color: "black",
+              },
+            }}
+            sx={{
+              "& .MuiOutlinedInput-root": {
+                "& fieldset": {
+                  borderColor: "secondary.main",
+                  borderWidth: "2px",
+                },
+              },
+              "& .MuiFormLabel-root": {
+                color: "primary.main",
+              },
+            }}
           />
+        </Grid>
+        <Grid item xs={4}>
           <TextField
             onChange={emailChangeHandler}
             label="Email"
             variant="outlined"
             required
+            fullWidth
+            InputProps={{
+              style: {
+                borderRadius: "50px",
+                backgroundColor: "white",
+                color: "black",
+              },
+            }}
+            sx={{
+              "& .MuiOutlinedInput-root": {
+                "& fieldset": {
+                  borderColor: "secondary.main",
+                  borderWidth: "2px",
+                },
+              },
+              "& .MuiFormLabel-root": {
+                color: "primary.main",
+              },
+            }}
           />
-        </Box>
-        <MyButton type="submit">Create</MyButton>
-      </form>
+        </Grid>
+        <Grid item xs={5} />
+        <Grid item xs={2} sx={{ textAlign: "center" }}>
+          <MyButton type="submit">Create</MyButton>
+        </Grid>
+        <Grid item xs={5} />
+      </Grid>
     </Box>
   );
 };

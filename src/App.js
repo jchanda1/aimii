@@ -2,7 +2,7 @@ import { Provider } from "react-redux";
 import { store } from "./store";
 import { CssBaseline, ThemeProvider, createTheme } from "@mui/material";
 import React from "react";
-import { pink } from "@mui/material/colors";
+import { grey, pink } from "@mui/material/colors";
 import HomePage from "./Components/HomePage/HomePage";
 
 function App() {
@@ -11,6 +11,9 @@ function App() {
       mode: "dark",
       primary: {
         main: pink[500],
+      },
+      secondary: {
+        main: grey[500],
       },
     },
     typography: {
