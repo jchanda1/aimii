@@ -1,8 +1,9 @@
 import { useSelector } from "react-redux";
-import { Button } from "@mui/material";
 import { useDispatch } from "react-redux";
 import { newEmployeeActions } from "../../store/newEmployeeSlice";
 import NEForm from "./NEForm";
+import { Grid } from "@mui/material";
+import MyButton from "../MyButton/MyButton";
 
 const NewEmployee = () => {
   const dispatch = useDispatch();
@@ -13,22 +14,16 @@ const NewEmployee = () => {
   };
 
   return (
-    <>
-      {formIsVisible && <NEForm />}
-      <Button
-        variant="contained"
-        onClick={onClickHandler}
-        sx={{
-          borderTopLeftRadius: "50px",
-          borderBottomLeftRadius: "50px",
-          borderTopRightRadius: "50px",
-          borderBottomRightRadius: "50px",
-          height: "100%",
-        }}
-      >
-        New User+
-      </Button>
-    </>
+    <Grid container spacing={1}>
+      <Grid item xs={12}>
+        {formIsVisible && <NEForm />}
+      </Grid>
+      <Grid item xs={5} />
+      <Grid item xs={2}>
+        <MyButton onClickHandler={onClickHandler}>New User+</MyButton>
+      </Grid>
+      <Grid item xs={5} />
+    </Grid>
   );
 };
 

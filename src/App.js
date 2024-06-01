@@ -2,9 +2,7 @@ import "./App.css";
 import { Provider } from "react-redux";
 import { store } from "./store";
 import { SearchBar } from "./Components/SearchBar/SearchBar";
-import ResultGrid from "./Components/ResultGrid/ResultGrid";
 import NewEmployee from "./Components/NewEmployeeForm/NewEmployee";
-import NEForm from "./Components/NewEmployeeForm/NEForm";
 import { Container, Grid } from "@mui/material";
 
 function App() {
@@ -17,11 +15,11 @@ function App() {
             <SearchBar />
           </Grid>
           <Grid item xs={2} />
-          <Grid item xs={5} />
-          <Grid item xs={2}>
+          <Grid item xs={2} />
+          <Grid item xs={8}>
             <NewEmployee />
           </Grid>
-          <Grid item xs={5} />
+          <Grid item xs={2} />
         </Grid>
       </Container>
     </Provider>

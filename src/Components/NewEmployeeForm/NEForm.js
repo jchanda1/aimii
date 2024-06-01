@@ -1,8 +1,9 @@
-import { Box, Button, TextField } from "@mui/material";
+import { Box, TextField } from "@mui/material";
 import { useSelector } from "react-redux";
 import { useDispatch } from "react-redux";
 import { newEmployeeActions } from "../../store/newEmployeeSlice";
 import { userData } from "../../Data/Users";
+import MyButton from "../MyButton/MyButton";
 
 const NEForm = () => {
   const formData = useSelector((state) => state.newEmployee);
@@ -110,9 +111,7 @@ const NEForm = () => {
             required
           />
         </Box>
-        <Button variant="outlined" type="submit">
-          New user
-        </Button>
+        <MyButton type="submit">Create</MyButton>
       </form>
     </Box>
   );
