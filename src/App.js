@@ -13,6 +13,11 @@ function App() {
         main: pink[500],
       },
     },
+    typography: {
+      button: {
+        textTransform: "none",
+      },
+    },
   });
 
   return (
