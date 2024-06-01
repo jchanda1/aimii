@@ -14,8 +14,8 @@ const HomePage = () => {
   return (
     <>
       {showAlert && <FormSubmitSuccess />}
-      <Container fixed sx={{ mt: "20%" }}>
-        <Grid container spacing={1}>
+      <Container fixed>
+        <Grid container spacing={1} sx={{ mt: "20%" }}>
           <Grid item xs={2} />
           <Grid item xs={8}>
             <SearchBar />
@@ -24,11 +24,6 @@ const HomePage = () => {
           <Grid item xs={12}>
             <ResultGrid />
           </Grid>
-          <Grid item xs={2} />
-          <Grid item xs={8}>
-            <NewEmployee />
-          </Grid>
-          <Grid item xs={2} />
           <Grid item xs={12}>
             <Footer />
           </Grid>

@@ -1,5 +1,6 @@
 import { AppBar, Grid } from "@mui/material";
 import MyButton from "../MyButton/MyButton";
+import NewEmployee from "../NewEmployeeForm/NewEmployee";
 import { useDispatch } from "react-redux";
 import { newEmployeeActions } from "../../store/newEmployeeSlice";
 
@@ -18,6 +19,11 @@ const Footer = () => {
       sx={{ top: "auto", bottom: "5%" }}
     >
       <Grid container spacing={1}>
+        <Grid item xs={3} />
+        <Grid item xs={6}>
+          <NewEmployee />
+        </Grid>
+        <Grid item xs={3} />
         <Grid item xs={5} />
         <Grid item xs={2} sx={{ textAlign: "center" }}>
           <MyButton onClickHandler={onClickHandler}>New User+</MyButton>

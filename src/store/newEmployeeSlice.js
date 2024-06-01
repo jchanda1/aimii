@@ -1,14 +1,18 @@
 import { createSlice } from "@reduxjs/toolkit";
 
+const clearForm = {
+  firstName: "",
+  lastName: "",
+  jobTitle: "",
+  phone: "",
+  email: "",
+};
+
 const newEmployeeSlice = createSlice({
   name: "newEmployee",
   initialState: {
+    ...clearForm,
     isVisible: false,
-    firstName: "",
-    lastName: "",
-    jobTitle: "",
-    phone: "",
-    email: "",
     showAlert: false,
   },
   reducers: {
@@ -32,6 +36,13 @@ const newEmployeeSlice = createSlice({
     },
     toggleShowAlert: (state) => {
       state.showAlert = !state.showAlert;
+    },
+    clearFormInput: (state) => {
+      state.firstName = "";
+      state.lastName = "";
+      state.jobTitle = "";
+      state.phone = "";
+      state.email = "";
     },
   },
 });

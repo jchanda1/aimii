@@ -27,6 +27,7 @@ const NEForm = () => {
     };
 
     dispatch(newEmployeeActions.toggleShowAlert());
+    dispatch(newEmployeeActions.clearFormInput());
 
     userData.push(person);
   }
@@ -87,6 +88,7 @@ const NEForm = () => {
                 color: "primary.main",
               },
             }}
+            value={firstName}
           />
         </Grid>
         <Grid item xs={6}>
@@ -114,6 +116,7 @@ const NEForm = () => {
                 color: "primary.main",
               },
             }}
+            value={lastName}
           />
         </Grid>
         <Grid item xs={4}>
@@ -141,6 +144,7 @@ const NEForm = () => {
                 color: "primary.main",
               },
             }}
+            value={jobTitle}
           />
         </Grid>
         <Grid item xs={4}>
@@ -168,6 +172,7 @@ const NEForm = () => {
                 color: "primary.main",
               },
             }}
+            value={phone}
           />
         </Grid>
         <Grid item xs={4}>
@@ -195,6 +200,7 @@ const NEForm = () => {
                 color: "primary.main",
               },
             }}
+            value={email}
           />
         </Grid>
         <Grid item xs={5} />

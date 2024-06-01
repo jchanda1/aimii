@@ -9,16 +9,18 @@ import removeSpaces from "../../util/utils";
 const ResultGrid = () => {
   const searchTerm = useSelector((state) => state.search.searchTerm);
 
-  const results =
-    searchTerm?.length > 2
-      ? userData.filter((user) => {
-          const fullName = user.firstName
-            .toUpperCase()
-            .concat(user.lastName.toUpperCase());
+  // const results =
+  //   searchTerm?.length > 2
+  //     ? userData.filter((user) => {
+  //         const fullName = user.firstName
+  //           .toUpperCase()
+  //           .concat(user.lastName.toUpperCase());
 
-          return fullName.includes(removeSpaces(searchTerm.toUpperCase()));
-        })
-      : [];
+  //         return fullName.includes(removeSpaces(searchTerm.toUpperCase()));
+  //       })
+  //     : [];
+
+  const results = userData;
 
   const resultGrid =
     results.length !== 0
@@ -28,6 +30,7 @@ const ResultGrid = () => {
               <Card
                 sx={{
                   minWidth: 275,
+                  minHeight: 150,
                   borderRadius: "25px",
                   border: "1px solid white",
                 }}
@@ -42,7 +45,12 @@ const ResultGrid = () => {
                     },
                   }}
                 >
-                  <Typography variant="h5" component="div" sx={{ mb: 1 }}>
+                  <Typography
+                    variant="body1"
+                    fontWeight="bold"
+                    component="div"
+                    sx={{ mb: 1 }}
+                  >
                     {`${result.firstName} ${result.lastName}`}
                   </Typography>
                   <Typography variant="body1" sx={{ mb: 1 }}>

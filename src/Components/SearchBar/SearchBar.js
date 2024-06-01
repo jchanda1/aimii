@@ -16,12 +16,12 @@ export const SearchBar = () => {
     <Grid container spacing={0}>
       <Grid item xs={11}>
         <TextField
-          id="standard-basic"
-          label="Search for a user..."
+          id="user-search"
           variant="outlined"
           value={searchTerm}
           onChange={onChangeHandler}
           fullWidth
+          label="Search for a user..."
           InputProps={{
             style: {
               borderTopLeftRadius: "50px",
@@ -30,6 +30,17 @@ export const SearchBar = () => {
               borderBottomRightRadius: "0px",
               backgroundColor: "white",
               color: "black",
+            },
+          }}
+          sx={{
+            "& .MuiOutlinedInput-root": {
+              "& fieldset": {
+                borderColor: "secondary.main",
+                borderWidth: "2px",
+              },
+            },
+            "& .MuiFormLabel-root": {
+              color: "primary.main",
             },
           }}
         />

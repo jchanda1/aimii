@@ -1,11 +1,19 @@
 import { Alert, Box } from "@mui/material";
+import { useDispatch } from "react-redux";
+import { newEmployeeActions } from "../../store/newEmployeeSlice";
 
 const FormSubmitSuccess = () => {
+  const dispatch = useDispatch();
+
+  function handleClose(e) {
+    dispatch(newEmployeeActions.toggleShowAlert());
+  }
+
   return (
     <Box>
       <Alert
         icon={false}
-        onClose={() => {}}
+        onClose={handleClose}
         color="primary"
         variant="filled"
         sx={{
