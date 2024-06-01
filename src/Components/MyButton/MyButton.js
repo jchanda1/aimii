@@ -1,6 +1,6 @@
 import { Button } from "@mui/material";
 
-const MyButton = ({ children, onClickHandler }) => {
+const MyButton = ({ children, onClickHandler, type }) => {
   return (
     <Button
       variant="contained"
@@ -12,6 +12,7 @@ const MyButton = ({ children, onClickHandler }) => {
         borderBottomRightRadius: "50px",
         height: "100%",
       }}
+      type={type}
     >
       {children}
     </Button>

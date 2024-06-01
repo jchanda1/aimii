@@ -9,6 +9,7 @@ const newEmployeeSlice = createSlice({
     jobTitle: "",
     phone: "",
     email: "",
+    showAlert: false,
   },
   reducers: {
     toggleIsVisible: (state) => {
@@ -28,6 +29,9 @@ const newEmployeeSlice = createSlice({
     },
     setEmail: (state, action) => {
       state.email = action.payload;
+    },
+    toggleShowAlert: (state) => {
+      state.showAlert = !state.showAlert;
     },
   },
 });

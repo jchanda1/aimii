@@ -29,6 +29,7 @@ export const SearchBar = () => {
               borderTopRightRadius: "0px",
               borderBottomRightRadius: "0px",
               backgroundColor: "white",
+              color: "black",
             },
           }}
         />

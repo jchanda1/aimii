@@ -6,8 +6,13 @@ import { userData } from "../../Data/Users";
 import MyButton from "../MyButton/MyButton";
 
 const NEForm = () => {
-  const formData = useSelector((state) => state.newEmployee);
   const dispatch = useDispatch();
+
+  const firstName = useSelector((state) => state.newEmployee.firstName);
+  const lastName = useSelector((state) => state.newEmployee.lastName);
+  const jobTitle = useSelector((state) => state.newEmployee.jobTitle);
+  const email = useSelector((state) => state.newEmployee.email);
+  const phone = useSelector((state) => state.newEmployee.phone);
 
   function convertToTitleCase(str) {
     if (!str) {
@@ -27,16 +32,16 @@ const NEForm = () => {
   function submitHandler(e) {
     e.preventDefault();
     const person = {
-      firstName: formData.firstName,
-      lastName: formData.lastName,
-      jobTitle: formData.jobTitle,
-      email: formData.email,
-      phone: formData.phone,
+      firstName: firstName,
+      lastName: lastName,
+      jobTitle: jobTitle,
+      email: email,
+      phone: phone,
     };
 
-    userData.push(person);
+    dispatch(newEmployeeActions.toggleShowAlert());
 
-    console.log(userData);
+    userData.push(person);
   }
 
   function firstNameChangeHandler(e) {

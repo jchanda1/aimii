@@ -1,28 +1,27 @@
-import "./App.css";
 import { Provider } from "react-redux";
 import { store } from "./store";
-import { SearchBar } from "./Components/SearchBar/SearchBar";
-import NewEmployee from "./Components/NewEmployeeForm/NewEmployee";
-import { Container, Grid } from "@mui/material";
+import { CssBaseline, ThemeProvider, createTheme } from "@mui/material";
+import React from "react";
+import { pink } from "@mui/material/colors";
+import HomePage from "./Components/HomePage/HomePage";
 
 function App() {
+  const myTheme = createTheme({
+    palette: {
+      mode: "dark",
+      primary: {
+        main: pink[500],
+      },
+    },
+  });
+
   return (
-    <Provider store={store}>
-      <Container fixed sx={{ border: 1 }}>
-        <Grid container spacing={1}>
-          <Grid item xs={2} />
-          <Grid item xs={8}>
-            <SearchBar />
-          </Grid>
-          <Grid item xs={2} />
-          <Grid item xs={2} />
-          <Grid item xs={8}>
-            <NewEmployee />
-          </Grid>
-          <Grid item xs={2} />
-        </Grid>
-      </Container>
-    </Provider>
+    <ThemeProvider theme={myTheme}>
+      <CssBaseline />
+      <Provider store={store}>
+        <HomePage />
+      </Provider>
+    </ThemeProvider>
   );
 }
 

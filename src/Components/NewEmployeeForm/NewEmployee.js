@@ -8,7 +8,6 @@ import MyButton from "../MyButton/MyButton";
 const NewEmployee = () => {
   const dispatch = useDispatch();
   const formIsVisible = useSelector((state) => state.newEmployee.isVisible);
-
   const onClickHandler = (e) => {
     dispatch(newEmployeeActions.toggleIsVisible());
   };
