@@ -5,16 +5,10 @@ import CardContent from "@mui/material/CardContent";
 import Typography from "@mui/material/Typography";
 import { userData } from "../../Data/Users";
 import { useSelector } from "react-redux";
+import removeSpaces from "../../util/utils";
 
 const ResultGrid = () => {
   const searchTerm = useSelector((state) => state.search.searchTerm);
-
-  const testFullName = userData[0].firstName
-    .toUpperCase()
-    .concat(userData[0].lastName.toUpperCase());
-  console.log(searchTerm.toUpperCase());
-  console.log(testFullName);
-  console.log(testFullName.includes(searchTerm.toUpperCase()));
 
   const results =
     searchTerm?.length > 2
@@ -23,41 +17,35 @@ const ResultGrid = () => {
             .toUpperCase()
             .concat(user.lastName.toUpperCase());
 
-          return fullName.includes(searchTerm.toUpperCase());
+          return fullName.includes(removeSpaces(searchTerm.toUpperCase()));
         })
       : [];
-
-  console.log(results);
 
   const resultGrid =
     results.length !== 0
       ? results.map((result) => {
           return (
             <Grid item xs={4}>
-              <Box sx={{ minWidth: 275 }}>
-                <Card variant="outlined" sx={{ borderRadius: "50px" }}>
-                  <CardContent>
-                    <Typography variant="h5" component="div">
-                      {`${result.firstName} ${result.lastName}`}
-                    </Typography>
-                  </CardContent>
-                  <CardContent>
-                    <Typography variant="h5" component="div">
-                      {result.jobTitle}
-                    </Typography>
-                  </CardContent>
-                  <CardContent>
-                    <Typography variant="h5" component="div">
-                      {result.phone}
-                    </Typography>
-                  </CardContent>
-                  <CardContent>
-                    <Typography variant="h5" component="div">
-                      {result.email}
-                    </Typography>
-                  </CardContent>
-                </Card>
-              </Box>
+              <Card
+                sx={{
+                  minWidth: 275,
+                  borderRadius: "25px",
+                  border: "1px solid white",
+                  textAlign: "center",
+                }}
+              >
+                <CardContent>
+                  <Typography variant="h5" component="div">
+                    {`${result.firstName} ${result.lastName}`}
+                  </Typography>
+                  <Typography sx={{ mb: 1.5 }}>{result.jobTitle}</Typography>
+                  <Typography variant="body2">
+                    {result.email}
+                    <br />
+                    {result.phone}
+                  </Typography>
+                </CardContent>
+              </Card>
             </Grid>
           );
         })
