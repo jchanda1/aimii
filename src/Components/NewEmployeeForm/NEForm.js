@@ -3,6 +3,7 @@ import { useSelector } from "react-redux";
 import { useDispatch } from "react-redux";
 import { newEmployeeActions } from "../../store/newEmployeeSlice";
 import { userData } from "../../Data/Users";
+import { convertToSentenceCase } from "../../util/utils";
 import MyButton from "../MyButton/MyButton";
 
 const NEForm = () => {
@@ -13,20 +14,6 @@ const NEForm = () => {
   const jobTitle = useSelector((state) => state.newEmployee.jobTitle);
   const email = useSelector((state) => state.newEmployee.email);
   const phone = useSelector((state) => state.newEmployee.phone);
-
-  function convertToTitleCase(str) {
-    if (!str) {
-      return "";
-    }
-
-    return str
-      .toLowerCase()
-      .split(" ")
-      .map(function (word) {
-        return word.charAt(0).toUpperCase().concat(word.substr(1));
-      })
-      .join(" ");
-  }
 
   console.log(userData);
   function submitHandler(e) {
@@ -45,12 +32,12 @@ const NEForm = () => {
   }
 
   function firstNameChangeHandler(e) {
-    const firstName = convertToTitleCase(e.target.value);
+    const firstName = convertToSentenceCase(e.target.value);
     dispatch(newEmployeeActions.setFirstName(firstName));
   }
 
   function lastNameChangeHandler(e) {
-    const lastName = convertToTitleCase(e.target.value);
+    const lastName = convertToSentenceCase(e.target.value);
     dispatch(newEmployeeActions.setLastName(lastName));
   }
 
