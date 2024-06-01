@@ -5,6 +5,7 @@ import { Container, Grid } from "@mui/material";
 import ResultGrid from "../ResultGrid/ResultGrid";
 import React from "react";
 import FormSubmitSuccess from "../NewEmployeeForm/FormSubmitSuccess";
+import Footer from "../Footer/Footer";
 
 const HomePage = () => {
   const showAlert = useSelector((state) => state.newEmployee.showAlert);
@@ -27,6 +28,9 @@ const HomePage = () => {
           <Grid item xs={2} />
           <Grid item xs={12}>
             <ResultGrid />
+          </Grid>
+          <Grid item xs={12}>
+            <Footer />
           </Grid>
         </Grid>
       </Container>
