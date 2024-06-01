@@ -14,8 +14,8 @@ const Footer = () => {
     <AppBar
       position="fixed"
       color="transparent"
-      elvation={0}
-      sx={{ top: "auto", bottom: 30 }}
+      elevation={0}
+      sx={{ top: "auto", bottom: "5%" }}
     >
       <Grid container spacing={1}>
         <Grid item xs={5} />
